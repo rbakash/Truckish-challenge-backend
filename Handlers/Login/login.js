@@ -22,12 +22,13 @@ exports.authenticateUser = function handlelogin(req, res) {
             }
             else {
                 console.log(results)
-                if(results.length==0){
+                if(results.length == 0){
                     res.status(200).send({
                         status:404,
                         Message:"User doesn't exists"
                     })
-                } else{
+                } else
+                {
                     bcrypt.compare(req.body.Password, results[0].Password).then(function (passwordMatch) {
                         if (passwordMatch) {
                             // res.send(200)

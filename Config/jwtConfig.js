@@ -6,7 +6,7 @@ var signOptions = {
     issuer: issuer,
     subject: subject,
     audience: audience,
-    expiresIn: "12h",
+    expiresIn: "60*60*5",
     algorithm: "RS256"
 };
 module.exports.signOptions = signOptions;
