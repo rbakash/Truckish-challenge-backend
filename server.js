@@ -33,8 +33,5 @@ var server = http.createServer(app);
 
 server.listen(setting.env.port, setting.env.hostname, function () {
     console.log(`Server running at http://${setting.env.hostname}:${setting.env.port}/`);
-    // multicahin.getInfo()
-    // const used = process.memoryUsage().heapUsed / 1024 / 1024;
-// console.log(`The script uses approximately ${Math.round(used * 100) / 100} MB`);
 });
 server.close();
