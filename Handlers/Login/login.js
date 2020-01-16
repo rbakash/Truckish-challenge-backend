@@ -29,6 +29,8 @@ exports.authenticateUser = function handlelogin(req, res) {
                     })
                 } else
                 {
+                    // var salt = bcrypt.genSaltSync(10);
+                    // var hash = bcrypt.hashSync(req.body.Password, salt);
                     bcrypt.compare(req.body.Password, results[0].Password).then(function (passwordMatch) {
                         if (passwordMatch) {
                             // res.send(200)
@@ -48,6 +50,7 @@ exports.authenticateUser = function handlelogin(req, res) {
                                     res.status(200).send({
                                         status:200,
                                         Token,
+                                        Id: results[0].id,
                                         Message: "Login successful"
                                     });
                                 }

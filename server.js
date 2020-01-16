@@ -1,21 +1,14 @@
 var express = require('express');
 var app = express();
-// var logger = require("./utils/logger");
 var routes = require('./routes');
-
 var http = require('http');
 var bodyParser = require('body-parser');
 var config = require('./config/databaseConfig');
  var setting = require('./Config/settings');
-// var multer = require('multer');
-// var upload = multer({
-//     dest: './tests'
-// }).single('upl');
-// // var multicahin = require('./handlers/blockChain/connectToBlockchain');
+var multer = require('multer');
 
 // //Cross orgin issue
 app.use(function (req, res, next) {
-    // bodyParser.json();
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE, OPTIONS");
     // "Origin, X-Requested-With, Content-Type, Accept, Authorization"
@@ -26,6 +19,7 @@ app.use(function (req, res, next) {
 
 });
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use('', routes.getRouter(app));
 
 
