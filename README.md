@@ -1,2 +1,9 @@
 # Truckish-challenge-backend
-Node restful api server
+
+## Installation
+
+Run `npm install` to install the dependencies.
+
+## Development server
+
+Run `npm start` to start the dev server.
