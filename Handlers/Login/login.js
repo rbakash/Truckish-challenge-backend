@@ -21,7 +21,6 @@ exports.authenticateUser = function handlelogin(req, res) {
                 })
             }
             else {
-                console.log(results)
                 if(results.length == 0){
                     res.status(200).send({
                         status:404,
@@ -63,6 +62,7 @@ exports.authenticateUser = function handlelogin(req, res) {
                             })
                         }
                     });
+                    logger.info(req.connection.remoteAddress + " ->" + " handler -> Login -> LoginHandler -> authenticate the user ended");
                 }
                 
             }

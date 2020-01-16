@@ -59,5 +59,4 @@ exports.addNewplace = function handleNewPlaceFormSubmission(req, res) {
             })
 
     });
-    console.log(req)
 }
